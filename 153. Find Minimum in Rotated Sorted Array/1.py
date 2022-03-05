@@ -11,4 +11,4 @@ def findMin(nums: List[int]) -> int:
 #         Than we are sure that the target number is on the left hand side.
 #         then we update our right pointer and tring search the target on the left side
         
-#         we should wait l >= r happen, at that time, the left pointer should point to the target
+#         we should wait l >= r happen, at that time, the left pointer should point to the targetdsaf
