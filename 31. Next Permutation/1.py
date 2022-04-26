@@ -2,8 +2,9 @@ from typing import List
 
 def dfs(nums, path, res):
     if not nums:
-        res += [path]
-        return 
+        res += [path.copy()]
+        
+        return res
     
     for i in range(len(nums)):
         path += [nums[i]]
