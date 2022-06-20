@@ -1,24 +1,22 @@
 
 from typing import List
 
+class Solution:
+    def combinationSum3(self, k: int, n: int) -> List[List[int]]:
+        dp = [set() for _ in range(n + 1)]
+        dp[0].add(())
+        characters = [i for i in range(1, 10)]
 
-def combinationSum3( k: int, n: int) -> List[List[int]]:
-    return dfs(k, n, 1, [], [])
-    
-def dfs( k, n, start, path, res):
-    if n == 0 and len(path) == 3:
-        res.append(path.copy())
-        return
-    
-    if n < 0 or len(path) > 3 or start > 9:
-        return
-    
-    for i in range(start, 10):
-        path += [start]
-        dfs(k, n - start, start + 1, path, res)
-        path.pop()
+        for char_num in characters:
+            for num_range in range(n, char_num -1, -1):
+                for prev in dp[num_range - char_num]:
+                    current_val = prev + (char_num,)
+                    dp[num_range].add(current_val)
+        res = []
+        for each in dp[-1]:
+            if len(each) == k:
+                res.append(list(each))
+        return res
         
-    return res
-        
-
-combinationSum3(3,7)
+x = Solution
+x.combinationSum3(x, 3,7)
