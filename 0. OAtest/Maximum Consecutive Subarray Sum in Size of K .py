@@ -10,7 +10,13 @@ def Maximum_K_Subarray(arr, k):
         mx = max(mx, curr)
         curr -= arr[i-k+1]
 
-    return mx
+    return sm - mx
 
-res = Maximum_K_Subarray([7,3,6,1], 2)
+res = Maximum_K_Subarray([7,3,6,1], 4)
+print(res)
+res = Maximum_K_Subarray([1,4,4,6,9,4], 2)
+print(res)
+res = Maximum_K_Subarray([10,4,8,1], 2)
+print(res)
+res = Maximum_K_Subarray([1,2,3,8,9,4,5], 2)
 print(res)
